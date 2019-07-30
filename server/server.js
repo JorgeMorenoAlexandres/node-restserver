@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json convierte el body del request en un json
 app.use(bodyParser.json())
 
-app.use(require('./controler/usuario'));
+//configuración global de rutas
+app.use(require('./controler/index'))
 
 //Conexión a la base de mongodb
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true },
